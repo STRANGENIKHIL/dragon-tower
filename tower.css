@@ -1,0 +1,301 @@
+/* tower.css (Updated with Difficulty Selector) */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+}
+
+body {
+  background: linear-gradient(145deg, #0f2027, #203a43, #2c5364);
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.heading {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.heading img {
+  height: 60px;
+}
+
+.heading h1 {
+  font-size: 2.2rem;
+  color: #39c5a2;
+  text-shadow: 0 0 5px #39c5a2;
+}
+
+/* Updated Container Layout */
+.both {
+  display: flex;
+  gap: 30px;
+  align-items: flex-start;
+}
+
+.main-container {
+  background: rgba(11, 17, 32, 0.95);
+  border-radius: 25px;
+  padding: 30px;
+  border: 1px solid #39c5a2;
+  box-shadow: 0 0 15px rgba(0, 255, 204, 0.3);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+  color: white;
+  max-width: 800px; /* Prevent container from getting too wide */
+}
+
+.btn {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(7, 1fr);
+  gap: 8px;
+  width: 200px;
+  height: 420px;
+  margin-right: 20px;
+}
+
+.click {
+  width: 60px;
+  height: 50px;
+  background: rgba(27, 42, 80, 0.6);
+  border: 1px solid #39c5a2;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.3s;
+  display: none; /* Start hidden */
+  margin: 0 auto;
+}
+
+/* Visual feedback for button states */
+.click.correct {
+  background: limegreen;
+  transform: scale(1.05);
+}
+
+.click.wrong {
+  background: red;
+  transform: scale(1.05);
+}
+
+.click.disabled {
+  opacity: 0.7;
+  cursor: not-allowed;
+}
+
+.extra {
+  width: 220px;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  color: white;
+}
+
+.walletBalanceCard {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  background-color: #1c1f2f;
+  padding: 10px 15px;
+  border-radius: 10px;
+}
+
+.walletBalanceCard svg {
+  width: 30px;
+}
+
+.balance {
+  font-size: 16px;
+  font-weight: bold;
+  color: #e7e037;
+}
+
+.addmoney {
+  background: #c083eb;
+  color: white;
+  padding: 5px 15px;
+  border: none;
+  border-radius: 15px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.addmoney:hover {
+  background: white;
+  color: #9c59cc;
+}
+
+.select {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  background: #2a2f3b;
+  padding: 10px;
+  border-radius: 8px;
+  color: white;
+}
+
+.select label {
+  cursor: pointer;
+  font-size: 14px;
+}
+
+.select input[type="radio"] {
+  margin-right: 10px;
+}
+
+.group input {
+  width: 100%;
+  padding: 10px;
+  border-radius: 8px;
+  border: 1px solid #39c5a2;
+  background: #16171d;
+  color: white;
+}
+
+.start {
+  padding: 10px 25px;
+  background: #1b514e;
+  border: 2px solid #39c5a2;
+  color: white;
+  cursor: pointer;
+  border-radius: 12px;
+  margin: 0 10px;
+  font-weight: bold;
+  transition: 0.3s;
+}
+
+.start:hover {
+  background: #39c5a2;
+  color: black;
+}
+
+.winning, .multiplier {
+  text-align: center;
+  font-size: 14px;
+}
+
+.fade-in {
+  animation: fadeIn 0.4s ease-in-out forwards;
+}
+
+@keyframes fadeIn {
+  0% {
+    transform: translateY(20px);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+
+/* Difficulty Selection */
+.select {
+  width: fit-content;
+  cursor: pointer;
+  position: relative;
+  transition: 300ms;
+  color: white;
+  overflow: hidden;
+}
+
+.selected {
+  background-color: #2a2f3b;
+  padding: 5px;
+  margin-bottom: 3px;
+  border-radius: 5px;
+  position: relative;
+  z-index: 100000;
+  font-size: 15px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.arrow {
+  position: relative;
+  right: 0px;
+  height: 10px;
+  transform: rotate(-90deg);
+  width: 25px;
+  fill: white;
+  z-index: 100000;
+  transition: 300ms;
+}
+
+.options {
+  display: flex;
+  flex-direction: column;
+  border-radius: 5px;
+  padding: 5px;
+  background-color: #2a2f3b;
+  position: relative;
+  top: -100px;
+  opacity: 0;
+  transition: 300ms;
+}
+
+.select:hover > .options {
+  opacity: 1;
+  top: 0;
+}
+
+.select:hover > .selected .arrow {
+  transform: rotate(0deg);
+}
+
+.option {
+  border-radius: 5px;
+  padding: 5px;
+  transition: 300ms;
+  background-color: #2a2f3b;
+  width: 150px;
+  font-size: 15px;
+}
+
+.option:hover {
+  background-color: #323741;
+}
+
+.options input[type="radio"] {
+  display: none;
+}
+
+.options label {
+  display: inline-block;
+}
+
+.options label::before {
+  content: attr(data-txt);
+}
+
+.options input[type="radio"]:checked + label {
+  display: none;
+}
+
+.options input[type="radio"]#all:checked + label {
+  display: none;
+}
+
+.select:has(.options input[type="radio"]#all:checked) .selected::before {
+  content: attr(data-default);
+}
+
+.select:has(.options input[type="radio"]#option-1:checked) .selected::before {
+  content: attr(data-one);
+}
+
+.select:has(.options input[type="radio"]#option-2:checked) .selected::before {
+  content: attr(data-two);
+}
+
+

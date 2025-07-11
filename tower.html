@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dragon Tower</title>
+  <link rel="stylesheet" href="tower.css">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
+</head>
+<body>
+  <div class="main-container">
+    <div class="heading">
+      <img class="dragon" src="dragon.png" alt="Dragon">
+      <h1>DRAGON <br> TOWER</h1>
+    </div>
+    <div class="both">
+      <div class="btn">
+        <!-- Buttons for the game -->
+        <button class="click"></button>
+        <button class="click"></button>
+        <button class="click"></button>
+        <button class="click"></button>
+        <button class="click"></button>
+        <button class="click"></button>
+        <button class="click"></button>
+        <button class="click"></button>
+        <button class="click"></button>
+        <button class="click"></button>
+        <button class="click"></button>
+        <button class="click"></button>
+        <button class="click"></button>
+        <button class="click"></button>
+        <button class="click"></button>
+        <button class="click"></button>
+        <button class="click"></button>
+        <button class="click"></button>
+        <button class="click"></button>
+        <button class="click"></button>
+        <button class="click"></button>
+      </div>
+      <div class="extra">
+        <div class="walletBalanceCard">
+          <div class="svgwrapper">
+            <svg viewBox="0 0 24 26" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <rect x="0.539915" y="6.28937" width="21" height="4" rx="1.5" transform="rotate(-4.77865 0.539915 6.28937)" fill="#7D6B9D" stroke="black"></rect>
+              <circle cx="11.5" cy="5.5" r="4.5" fill="#E7E037" stroke="#F9FD50" stroke-width="2"></circle>
+              <path d="M2.12011 6.64507C7.75028 6.98651 12.7643 6.94947 21.935 6.58499C22.789 6.55105 23.5 7.23329 23.5 8.08585V24C23.5 24.8284 22.8284 25.5 22 25.5H2C1.17157 25.5 0.5 24.8284 0.5 24V8.15475C0.5 7.2846 1.24157 6.59179 2.12011 6.64507Z" fill="#BF8AEB" stroke="black"></path>
+              <path d="M16 13.5H23.5V18.5H16C14.6193 18.5 13.5 17.3807 13.5 16C13.5 14.6193 14.6193 13.5 16 13.5Z" fill="#BF8AEB" stroke="black"></path>
+            </svg>
+          </div>
+          <div class="balancewrapper">
+            <span class="balanceHeading">Wallet balance</span>
+            <p class="balance">₹<span id="currency">1000</span></p>
+          </div>
+          <button class="addmoney"><span class="plussign">+</span>Reset Money</button>
+        </div>
+        <p>Difficulty</p>
+        <div class="select">
+          <div class="selected" data-default="Easy" data-one="Medium" data-two="Rigged">
+            <svg xmlns="http://www.w3.org/2000/svg" height="1em" viewBox="0 0 512 512" class="arrow">
+              <path d="M233.4 406.6c12.5 12.5 32.8 12.5 45.3 0l192-192c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L256 338.7 86.6 169.4c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3l192 192z"></path>
+            </svg>
+          </div>
+          <div class="options">
+            <div title="all">
+              <input id="all" name="option" type="radio" checked="" />
+              <label class="option" for="all" data-txt="Easy"></label>
+            </div>
+            <div title="option-1">
+              <input id="option-1" name="option" type="radio" />
+              <label class="option" for="option-1" data-txt="Medium"></label>
+            </div>
+            <div title="option-2">
+              <input id="option-2" name="option" type="radio" />
+              <label class="option" for="option-2" data-txt="Rigged"></label>
+            </div>
+          </div>
+        </div>
+        <p>Enter the Bet Amount</p>
+        <div class="group">
+          <input id="query" class="input" type="text" placeholder="Amount" name="searchbar" maxlength="7" pattern="[0-9]{7}" step="1" min="0" max="9999" />
+        </div>
+        <div class="winning">
+          <br>
+          <br>
+          <p>Winning: <span>0</span>Rs</p>
+        </div>
+        <div class="multiplier">
+          <br>
+          <br>
+          <p>Multiplier: <span>1.00</span>x</p>
+        </div>
+      </div>
+    </div>
+    <div class="cash">
+      <<!-- In the HTML, change the button onclick attributes to match the JS function names -->
+      <button class="start" onclick="startBet()">
+        <span class="start1"> BET</span>
+      </button>
+      <button class="start" onclick="cashOut()">
+        <span class="start1"> Cash Out</span>
+      </button>
+    </div>
+  </div>
+  <script src="tower.js"></script>
+</body>
+</html>
